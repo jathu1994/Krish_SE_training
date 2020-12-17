@@ -12,7 +12,7 @@ public class ApplicationRunner {
 		try {
 		shoppingCart.addItems("Anchor","Luxpray");
 		}catch(CheckoutException ce) {
-			ce.printStackTrace();
+			ce.printStackTrace(System.out);
 			
 		}
 		
