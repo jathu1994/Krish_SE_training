@@ -2,7 +2,7 @@ package com.jatha.exceptionhandler;
 
 import java.io.FileNotFoundException;
 
-public class GenerateBill{
+public class BillGenerator{
 	public void generate(double amount,String item_1,String item_2)  throws FileNotFoundException {
 		//Change this to true or false to make it throw exception
 		boolean logoFile = false;

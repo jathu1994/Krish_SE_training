@@ -2,7 +2,7 @@ package com.jatha.exceptionhandler;
 
 import com.jatha.exceptionhandler.customexceptions.CannotReachBankException;
 
-public class ConnectBank {
+public class BankConnector {
 	boolean connectionStatus = false;
 	public boolean connectToBank() throws CannotReachBankException {
 		if(connectionStatus) {

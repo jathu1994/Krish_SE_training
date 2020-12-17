@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ReverseBigInt {
+public class BigIntReverser {
 	
 	public static void main(String args[]) {
 		
@@ -31,8 +31,8 @@ public class ReverseBigInt {
 		}
 		
 		if(number.signum()==1) {
-			ReverseBigInt rv = new ReverseBigInt();
-			rv.reverseInt(number);
+			BigIntReverser bigIntReverser = new BigIntReverser();
+			bigIntReverser.reverseInt(number);
 			
 		}else {
 			System.out.println("Enter a number grater than 0");
@@ -43,16 +43,16 @@ public class ReverseBigInt {
 	}
 		
 	public void reverseInt(BigInteger number) {
-		ArrayList<BigInteger> revnum = new ArrayList<BigInteger>();
+		ArrayList<BigInteger> reversedNumber = new ArrayList<BigInteger>();
 		while(number.signum()==1) {
 			
 			BigInteger for10 = new BigInteger("10");
-			BigInteger z = number.mod(for10);
-			revnum.add(z);
+			BigInteger remainder = number.mod(for10);
+			reversedNumber.add(remainder);
 			number = number.divide(for10);
 		}
 		
-		for (BigInteger num : revnum) { 		      
+		for (BigInteger num : reversedNumber) { 		      
 	           System.out.print(num); 		
 	      }
 		System.out.println();

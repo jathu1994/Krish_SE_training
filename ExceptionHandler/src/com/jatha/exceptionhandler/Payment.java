@@ -7,24 +7,24 @@ import com.jatha.exceptionhandler.customexceptions.PaymentException;
 
 public class Payment {
 	public void proceedPayment(double amount,String item_1,String item_2) throws PaymentException{
-		BalanceChecker bc = new BalanceChecker();
+		BalanceChecker balanceChecker = new BalanceChecker();
 		
 		
 		boolean status = false;
 		try {
-			status = bc.checkBalance(amount);
-		}catch (CannotCheckBalanceException ex) {
-			throw new PaymentException("--cannot make payment for cart--", ex);
+			status = balanceChecker.checkBalance(amount);
+		}catch (CannotCheckBalanceException ccbe) {
+			throw new PaymentException("--cannot make payment for cart--", ccbe);
 			
 		}
 		
 		
 		if (status) {
-			GenerateBill gb =  new GenerateBill();
+			BillGenerator gb =  new BillGenerator();
 			try {
 			gb.generate(amount,item_1,item_2);
-			}catch(FileNotFoundException e){
-				e.printStackTrace();
+			}catch(FileNotFoundException fnf){
+				fnf.printStackTrace(System.out);
 				
 			}
 			
