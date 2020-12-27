@@ -1,5 +1,6 @@
 package com.jatha.designpatterns.memento;
 
+//It is a POJO 
 public class Project {
 	private String versionId;
 	private String documentText;

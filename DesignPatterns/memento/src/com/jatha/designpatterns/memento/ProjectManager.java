@@ -23,4 +23,5 @@ public class ProjectManager {
 	public void restoreFromPreviousVersion(Project project) {
 		this.project = project;
 	}
+	
 }

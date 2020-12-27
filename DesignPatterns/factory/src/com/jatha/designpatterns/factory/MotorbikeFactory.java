@@ -1,5 +1,9 @@
 package com.jatha.designpatterns.factory;
 
+/**
+ * This factory class deliver the specification of each motor-bike models as per
+ * the user request
+ */
 public class MotorbikeFactory {
 
 	public static Motorbike showSpecification(BikeModels bikeModel) {

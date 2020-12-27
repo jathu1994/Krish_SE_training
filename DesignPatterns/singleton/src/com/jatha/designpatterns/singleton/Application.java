@@ -2,8 +2,8 @@ package com.jatha.designpatterns.singleton;
 
 import java.io.IOException;
 
-/** all gamers connected to a server in a multiplayer 
- * game are set by a common configuration for gunsounds     */
+/** all gamers connected to a server in a multi-player 
+ * game are set by a common configuration for gun sounds     */
 
 public class Application {
 
