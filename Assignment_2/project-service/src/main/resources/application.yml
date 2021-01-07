@@ -1,0 +1,10 @@
+debug: true
+
+spring:
+  application:
+    name: project
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+

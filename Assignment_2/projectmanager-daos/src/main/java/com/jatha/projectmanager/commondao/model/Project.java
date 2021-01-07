@@ -33,4 +33,10 @@ public class Project {
 	public void setProjectManager(String projectManager) {
 		this.projectManager = projectManager;
 	}
+	public String getProjectStatus() {
+		return projectStatus;
+	}
+	public void setProjectStatus(String projectStatus) {
+		this.projectStatus = projectStatus;
+	}
 }
