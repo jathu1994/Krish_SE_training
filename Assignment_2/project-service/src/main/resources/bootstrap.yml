@@ -1,10 +1,13 @@
-spring:
-  cloud:
-    config:
-      uri: http://localhost:8191
-  application:
-    name: project
-    
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:8191
+#  application:
+#    name: project
+spring:  cloud:    config:      discovery:        enabled: true
+        service-id: configserver
+  application:    name: project
+  
 eureka:
   client:
     register-with-eureka: true

@@ -1,10 +1,18 @@
+#spring:
+#  cloud:
+#    config:
+#      uri: http://localhost:8191
+#  application:
+#    name: task
 spring:
   cloud:
     config:
-      uri: http://localhost:8191
+      discovery:
+        enabled: true
+        service-id: configserver
   application:
     name: task
-    
+  
 eureka:
   client:
     register-with-eureka: true
