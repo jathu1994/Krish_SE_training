@@ -13,6 +13,7 @@ public class Task {
 	
 	String taskName;
 	String taskStatus;
+	String projectId;
 	
 	public String getTaskId() {
 		return taskId;
@@ -32,5 +33,18 @@ public class Task {
 	public void setTaskStatus(String taskStatus) {
 		this.taskStatus = taskStatus;
 	}
+	
+	public String getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(String projectId) {
+		this.projectId = projectId;
+	}
+	@Override
+	public String toString() {
+		return "Task [taskId=" + taskId + ", taskName=" + taskName + ", taskStatus=" + taskStatus + ", projectId="
+				+ projectId + "]";
+	}
+	
 
 }

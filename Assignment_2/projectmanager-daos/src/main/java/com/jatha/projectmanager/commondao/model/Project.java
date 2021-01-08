@@ -39,4 +39,9 @@ public class Project {
 	public void setProjectStatus(String projectStatus) {
 		this.projectStatus = projectStatus;
 	}
+	@Override
+	public String toString() {
+		return "Project [projectId=" + projectId + ", projectName=" + projectName + ", projectManager=" + projectManager
+				+ ", projectStatus=" + projectStatus + "]";
+	}
 }
