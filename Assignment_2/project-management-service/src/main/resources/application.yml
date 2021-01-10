@@ -1,0 +1,13 @@
+debug: true
+
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+
+spring:
+  application:
+    name: projectmanagement
+    
+server:
+  port: 9193
