@@ -21,6 +21,10 @@ public class Application {
 		pkg.setSuccessor(spkg);
 		spkg.setSuccessor(gpkg);
 		gpkg.setSuccessor(ppkg);
+		
+		PackageCreator packageCreator0 = new PackageCreator(40000);
+		System.out.println(pkg.addPackageItems(packageCreator0));
+		System.out.println("-----------------------------------");
 
 		PackageCreator packageCreator = new PackageCreator(90000);
 		System.out.println(pkg.addPackageItems(packageCreator));

@@ -6,7 +6,7 @@ public class Employee implements Cloneable {
 
 	private String empNo;
 	private String empFirstName;
-	ArrayList<RBT> rbts = new ArrayList<RBT>();
+	private ArrayList<RBT> rbts = new ArrayList<RBT>();
 
 	public String getEmpNo() {
 		return empNo;
