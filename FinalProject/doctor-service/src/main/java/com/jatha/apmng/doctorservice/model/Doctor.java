@@ -17,10 +17,8 @@ import javax.persistence.Table;
 public class Doctor implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-
 	String regNo;
+	
 	String firstName;
 	String lastName;
 	String phoneNumber;
@@ -38,7 +36,6 @@ public class Doctor implements Serializable {
 	public Doctor(int id, String regNo, String firstName, String lastName, String phoneNumber, String email,
 			String address, DoctorSpeciality doctorSpeciality) {
 		super();
-		this.id = id;
 		this.regNo = regNo;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -48,13 +45,6 @@ public class Doctor implements Serializable {
 		this.doctorSpeciality = doctorSpeciality;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getRegNo() {
 		return regNo;
@@ -111,13 +101,14 @@ public class Doctor implements Serializable {
 	public void setDoctorSpeciality(DoctorSpeciality doctorSpeciality) {
 		this.doctorSpeciality = doctorSpeciality;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Doctor [id=" + id + ", regNo=" + regNo + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address + ", doctorSpeciality="
-				+ doctorSpeciality + "]";
+		return "Doctor [regNo=" + regNo + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
+				+ phoneNumber + ", email=" + email + ", address=" + address + ", doctorSpeciality=" + doctorSpeciality
+				+ "]";
 	}
+	
 	
 	
 
