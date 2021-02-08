@@ -1,5 +1,6 @@
 package com.jatha.apmng.patientservice.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +15,9 @@ public class Patient {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	
+	@Column(unique = true)
 	String NICNumber;
+	
 	String firstName;
 	String lastName;
 	String phoneNumber;

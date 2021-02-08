@@ -3,48 +3,50 @@ package com.jatha.apmng.doctorservice.model;
 import java.io.Serializable;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "doctors")
 public class Doctor implements Serializable {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+
+	@Column(unique = true)
 	String regNo;
-	
 	String firstName;
 	String lastName;
 	String phoneNumber;
 	String email;
 	String address;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "typeId", referencedColumnName = "id")
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "typeId", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
 	private DoctorSpeciality doctorSpeciality;
 
-	public Doctor() {
-		super();
+	public int getId() {
+		return id;
 	}
 
-	public Doctor(int id, String regNo, String firstName, String lastName, String phoneNumber, String email,
-			String address, DoctorSpeciality doctorSpeciality) {
-		super();
-		this.regNo = regNo;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.address = address;
-		this.doctorSpeciality = doctorSpeciality;
+	public void setId(int id) {
+		this.id = id;
 	}
-
 
 	public String getRegNo() {
 		return regNo;
@@ -101,13 +103,11 @@ public class Doctor implements Serializable {
 	public void setDoctorSpeciality(DoctorSpeciality doctorSpeciality) {
 		this.doctorSpeciality = doctorSpeciality;
 	}
-
-	@Override
-	public String toString() {
-		return "Doctor [regNo=" + regNo + ", firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
-				+ phoneNumber + ", email=" + email + ", address=" + address + ", doctorSpeciality=" + doctorSpeciality
-				+ "]";
-	}
+	
+	
+	
+	
+	
 	
 	
 	

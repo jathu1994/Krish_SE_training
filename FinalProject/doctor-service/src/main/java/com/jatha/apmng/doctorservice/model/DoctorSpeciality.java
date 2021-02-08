@@ -18,16 +18,6 @@ public class DoctorSpeciality implements Serializable{
 	
 	String specialityType;
 
-	public DoctorSpeciality() {
-		super();
-	}
-
-	public DoctorSpeciality(int id, String specialityType) {
-		super();
-		this.id = id;
-		this.specialityType = specialityType;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -42,11 +32,6 @@ public class DoctorSpeciality implements Serializable{
 
 	public void setSpecialityType(String specialityType) {
 		this.specialityType = specialityType;
-	}
-
-	@Override
-	public String toString() {
-		return "DoctorSpeciality [id=" + id + ", specialityType=" + specialityType + "]";
 	}
 	
 	

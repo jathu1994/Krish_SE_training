@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.jatha.apmng.doctorservice.model.DoctorSpeciality;
@@ -28,6 +29,16 @@ public class DoctorSpecialityServiceImpl implements DoctorSpecialityService {
 	@Override
 	public Optional<DoctorSpeciality> findById(int id) {
 		return doctorSpecialityRepository.findById(id);
+	}
+
+	@Override
+	public ResponseEntity<?> deleteDoctorType(int typeId) {
+		
+		return doctorSpecialityRepository.findById(typeId).map(doctorSpeciality -> {
+			doctorSpecialityRepository.delete(doctorSpeciality);
+            return ResponseEntity.ok().build();
+        }).orElse(null);
+		
 	}
 
 }
