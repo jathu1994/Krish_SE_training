@@ -15,6 +15,8 @@ public interface VisitingDoctorRepository extends JpaRepository<VisitingDoctors,
 	
 	List<VisitingDoctors> findByDocRegNo(String docRegNo);
 	
+//	List<VisitingDoctors> findByHosRegNoAndDocRegNo(String hosRegNo,String docRegNo); 
+	
 	Optional<VisitingDoctors> findByHosRegNoAndDocRegNo(String hosRegNo,String docRegNo); 
 
 }

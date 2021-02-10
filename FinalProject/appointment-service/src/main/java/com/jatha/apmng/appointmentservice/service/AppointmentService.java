@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 
 import com.jatha.apmng.appointmentservice.model.Appointment;
+import com.jatha.apmng.appointmentservice.model.Doctor;
+import com.jatha.apmng.appointmentservice.model.DoctorSchedules;
 import com.jatha.apmng.appointmentservice.model.Hospital;
 
 public interface AppointmentService {
@@ -19,5 +21,9 @@ public interface AppointmentService {
 	ResponseEntity<?> deleteAppointment(int id);
 
 	List<Hospital> findByHospitalName(String hosName);
+
+	List<Doctor> findDoctorsByHospital(String hosRegNo);
+
+	List<DoctorSchedules> findAvailabilityByHosAndDoc(String hosRegNo, String docRegNo);
 
 }

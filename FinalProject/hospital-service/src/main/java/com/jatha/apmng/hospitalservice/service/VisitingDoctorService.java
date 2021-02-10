@@ -16,6 +16,10 @@ public interface VisitingDoctorService {
 	
 	List<VisitingDoctors> findByHosRegNo(String hosRegNo);
 	
+	List<VisitingDoctors> findByDocRegNo(String docRegNo);
+	
+//	List<VisitingDoctors> findByHosRegNoAndDocRegNo(String hosRegNo,String docRegNo); 
+	
 	Optional<VisitingDoctors> findByHosRegNoAndDocRegNo(String hosRegNo,String docRegNo); 
 
 	ResponseEntity<?> deleteVisitingDoctors(String hosRegNo, String docRegNo);

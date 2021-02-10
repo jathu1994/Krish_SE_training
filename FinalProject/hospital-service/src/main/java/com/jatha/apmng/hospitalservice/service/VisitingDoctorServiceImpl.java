@@ -32,6 +32,13 @@ public class VisitingDoctorServiceImpl implements VisitingDoctorService {
 	public List<VisitingDoctors> findByHosRegNo(String hosRegNo) {
 		return visitingDoctorRepository.findByHosRegNo(hosRegNo);
 	}
+	
+	
+
+	@Override
+	public List<VisitingDoctors> findByDocRegNo(String docRegNo) {
+		return visitingDoctorRepository.findByDocRegNo(docRegNo);
+	}
 
 	@Override
 	public Optional<VisitingDoctors> findByHosRegNoAndDocRegNo(String hosRegNo, String docRegNo) {

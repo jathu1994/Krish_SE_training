@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jatha.apmng.appointmentservice.model.Appointment;
+import com.jatha.apmng.appointmentservice.model.Doctor;
+import com.jatha.apmng.appointmentservice.model.DoctorSchedules;
 import com.jatha.apmng.appointmentservice.model.Hospital;
 import com.jatha.apmng.appointmentservice.service.AppointmentService;
 
@@ -55,6 +57,21 @@ public class AppointmentController {
 	public List<Hospital> findByHospitalName(@RequestParam(value = "hosName") String hosName) {
 		return appointmentService.findByHospitalName(hosName);
 	}
+	
+	@GetMapping("/hospitals/doctors")
+	public List<Doctor> findByHospitalRegNo(@RequestParam(value = "hosRegNo") String hosRegNo) {
+		return appointmentService.findDoctorsByHospital(hosRegNo);
+	}
+	
+	@GetMapping("/hospitals/doctors/availability")
+	public List<DoctorSchedules> findAvailabilityByHosAndDoc(
+			@RequestParam(value = "hosRegNo") String hosRegNo,
+			@RequestParam(value = "docRegNo") String docRegNo
+			) {
+		return appointmentService.findAvailabilityByHosAndDoc(hosRegNo,docRegNo);
+	}
+	
+
 	
 
 }

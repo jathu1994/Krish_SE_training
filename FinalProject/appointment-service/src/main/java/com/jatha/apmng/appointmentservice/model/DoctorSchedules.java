@@ -1,19 +1,16 @@
-package com.jatha.apmng.hospitalservice.model;
+package com.jatha.apmng.appointmentservice.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "doctorScedules")
-public class DoctorSchedules {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class DoctorSchedules implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	int id;
 	
 	String docRegNo;
@@ -21,7 +18,7 @@ public class DoctorSchedules {
 	Date date;
 	String session;
 	Time expectedArrival;
-	String status;
+	String status;//waiting arrived left cancelled
 	int currentAppointmentNumber;
 	int totalBookings;
 	
