@@ -1,29 +1,33 @@
-package com.jatha.apmng.hospitalservice.model;
+package com.jatha.apmng.appointmentservice.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "hospitals")
 public class Hospital implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	@Id
-	@Column(unique = true)
+	
 	String hosRegNo;
 	String hosName;
 	String hosType;
 	String hosAdress;
 	String hosPhoneNumber;
 	String hosEmail;
-	
+	public Hospital() {
+		super();
+	}
+	public Hospital(String hosRegNo, String hosName, String hosType, String hosAdress, String hosPhoneNumber,
+			String hosEmail) {
+		super();
+		this.hosRegNo = hosRegNo;
+		this.hosName = hosName;
+		this.hosType = hosType;
+		this.hosAdress = hosAdress;
+		this.hosPhoneNumber = hosPhoneNumber;
+		this.hosEmail = hosEmail;
+	}
 	public String getHosRegNo() {
 		return hosRegNo;
 	}
@@ -60,6 +64,13 @@ public class Hospital implements Serializable {
 	public void setHosEmail(String hosEmail) {
 		this.hosEmail = hosEmail;
 	}
+	@Override
+	public String toString() {
+		return "Hospital [hosRegNo=" + hosRegNo + ", hosName=" + hosName + ", hosType=" + hosType + ", hosAdress="
+				+ hosAdress + ", hosPhoneNumber=" + hosPhoneNumber + ", hosEmail=" + hosEmail + "]";
+	}
+	
+	
 	
 	
 

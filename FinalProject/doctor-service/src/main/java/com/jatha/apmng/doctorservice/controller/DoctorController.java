@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,26 +36,21 @@ public class DoctorController {
     }
 	
 	
-	@GetMapping(value = "/doctors")
+	@GetMapping("/doctors")
 	public List<Doctor> findAllDoctors() {
 		
 		return doctorService.findAll();
 		
 	}
 	
-	@DeleteMapping("/doctors/{doctorId}")
-    public ResponseEntity<?> deleteDoctor(@PathVariable("doctorId") int doctorId) {
-        return doctorService.deleteDoctor(doctorId);
-    }
-	
-	@RequestMapping(value = "/doctors/{id}",method = RequestMethod.GET)
-	public Optional<Doctor> findDoctorById(@PathVariable(value="id") int id) {
-		
-		return doctorService.findById(id);
-		
+	@GetMapping("/doctors/{regNo}")
+	public Optional<Doctor> findByRegNo(@PathVariable("regNo") String regNo) {
+		return doctorService.findByRegNo(regNo);
 	}
 	
-	
-	//Doctor type
+	@DeleteMapping("/doctors/{regNo}")
+    public ResponseEntity<?> deleteDoctor(@PathVariable("regNo") String regNo) {
+        return doctorService.deleteDoctor(regNo);
+    }
 
 }

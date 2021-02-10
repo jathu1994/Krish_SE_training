@@ -11,7 +11,8 @@ public interface DoctorService {
 	
 	Doctor save(Doctor doctor,int typeId);
 	List<Doctor> findAll();
-	Optional<Doctor> findById(int id);
-	ResponseEntity<?> deleteDoctor(int doctorId);
+	Optional<Doctor> findByRegNo(String regNo);
+	
+	ResponseEntity<?> deleteDoctor(String regNo);
 
 }

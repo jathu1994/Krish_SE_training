@@ -1,0 +1,55 @@
+package com.jatha.apmng.hospitalservice.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jatha.apmng.hospitalservice.model.VisitingDoctors;
+import com.jatha.apmng.hospitalservice.service.VisitingDoctorService;
+
+@RestController
+@RequestMapping(value = "/hosservices")
+public class VisitingDoctorController {
+	
+	@Autowired
+	VisitingDoctorService visitingDoctorService ;
+	
+	@PostMapping("/visitingdoctors")
+    public VisitingDoctors saveVisitingDoctor(@RequestBody VisitingDoctors visitingDoctors) {
+		
+		return visitingDoctorService.save(visitingDoctors);
+    }
+	
+	@GetMapping("/visitingdoctors")
+	public List<VisitingDoctors> findAllVisitingDoctors() {
+		
+		return visitingDoctorService.findAll();
+	}
+	
+	@GetMapping("/visitingdoctors/{hosRegNo}")
+	public List<VisitingDoctors> findAllVisitingDoctorsByHospital(@PathVariable("hosRegNo") String hosRegNo) {
+		
+		return visitingDoctorService.findByHosRegNo(hosRegNo);
+	}
+	
+	@GetMapping("/visitingdoctors/{hosRegNo}/{docRegNo}")
+	public Optional<VisitingDoctors> findVisitingDoctorsByHospitalAndDoctor(@PathVariable("hosRegNo") String hosRegNo, @PathVariable("docRegNo") String docRegNo) {
+		
+		return visitingDoctorService.findByHosRegNoAndDocRegNo(hosRegNo,docRegNo);
+	}
+	
+	@DeleteMapping("/visitingdoctors/{hosRegNo}/{docRegNo}")
+    public ResponseEntity<?> deleteHospital(@PathVariable("hosRegNo") String hosRegNo, @PathVariable("docRegNo") String docRegNo) {
+        return visitingDoctorService.deleteVisitingDoctors(hosRegNo, docRegNo); 
+    }
+
+}

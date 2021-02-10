@@ -12,6 +12,11 @@ import javax.persistence.Table;
 @Table(name = "doctorspeciality")
 public class DoctorSpeciality implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;

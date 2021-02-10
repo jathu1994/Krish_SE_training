@@ -35,16 +35,16 @@ public class DoctorServiceImpl implements DoctorService {
 	}
 
 	@Override
-	public Optional<Doctor> findById(int id) {
-		return doctorRepository.findById(id);
-	}
-
-	@Override
-	public ResponseEntity<?> deleteDoctor(int doctorId) {
-		return doctorRepository.findById(doctorId).map(doctor -> {
+	public ResponseEntity<?> deleteDoctor(String regNo) {
+		return doctorRepository.findByRegNo(regNo).map(doctor -> {
 			doctorRepository.delete(doctor);
             return ResponseEntity.ok().build();
         }).orElse(null);
+	}
+
+	@Override
+	public Optional<Doctor> findByRegNo(String regNo) {
+		return doctorRepository.findByRegNo(regNo);
 	}
 
 }

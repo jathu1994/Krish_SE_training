@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "doctorScedules")
-public class DoctorScedules {
+public class DoctorSchedules {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
@@ -20,7 +20,7 @@ public class DoctorScedules {
 	String hosRegNo;
 	Date date;
 	String session;
-	Time epectedArrival;
+	Time expectedArrival;
 	String status;//waiting arrived left cancelled
 	int currentAppointmentNumber;
 	public int getId() {
@@ -53,11 +53,12 @@ public class DoctorScedules {
 	public void setSession(String session) {
 		this.session = session;
 	}
-	public Time getEpectedArrival() {
-		return epectedArrival;
+	
+	public Time getExpectedArrival() {
+		return expectedArrival;
 	}
-	public void setEpectedArrival(Time epectedArrival) {
-		this.epectedArrival = epectedArrival;
+	public void setExpectedArrival(Time expectedArrival) {
+		this.expectedArrival = expectedArrival;
 	}
 	public String getStatus() {
 		return status;
@@ -76,3 +77,5 @@ public class DoctorScedules {
 	
 
 }
+
+

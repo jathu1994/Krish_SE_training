@@ -2,10 +2,15 @@ package com.jatha.apmng.appointmentservice.model;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "appointment")
 public class Appointment {
 	
 	@Id
@@ -14,7 +19,7 @@ public class Appointment {
 	
 	String hosRegNo;
 	String docRegNo;
-	String patientId;//patient Id nic
+	String patientId;//patient Id nicw
 	Date sessionDate;
 	String session;
 	String appointmentNumber;
@@ -62,6 +67,4 @@ public class Appointment {
 	}
 	
 	
-	
-
 }
